@@ -28,7 +28,7 @@ class GildedRoseTest {
     assertThat("Quality is unchanged",element1.quality, is(20));
     assertThat("sellIn is unchanged", element2.sellIn, is(-1));
  }
-
+ 
  @Test
  @DisplayName("Test that the quality of Aged Brie increase while it's SellIn decrease")
  void testAgedBrie(){
