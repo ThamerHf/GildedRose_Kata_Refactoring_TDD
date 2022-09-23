@@ -4,6 +4,7 @@ plugins {
     id 'checkstyle'
     id 'pmd'
     id 'com.github.spotbugs' version '4.7.5'
+    id 'info.solidsoft.pitest' version '1.7.4'
 }
 
 group = 'com.gildedrose'
@@ -21,8 +22,7 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-
-
+    pitest "org.pitest:pitest-junit5-plugin:0.12"
 }
 
 tasks.withType(JavaCompile) {
