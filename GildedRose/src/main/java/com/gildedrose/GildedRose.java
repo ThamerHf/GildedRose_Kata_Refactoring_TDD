@@ -52,7 +52,7 @@ class GildedRose {
                             }
                         }
                     } else {
-                        produits[i].quality = produits[i].quality - produits[i].quality;
+                        produits[i].quality = 0;
                     }
                 } else {
                     if (produits[i].quality < 50) {
