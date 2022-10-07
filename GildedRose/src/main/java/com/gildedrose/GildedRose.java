@@ -7,6 +7,22 @@ class GildedRose {
         this.produits = produits;
     }
 
+    public void updateQualityBackstage(Item produit){
+        if (produit.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (produit.sellIn < 11) {
+                if (produit.quality < 50) {
+                    produit.quality = produit.quality + 1;
+                }
+            }
+
+            if (produit.sellIn < 6) {
+                if (produit.quality < 50) {
+                    produit.quality = produit.quality + 1;
+                }
+            }
+        }
+    }
+
     public void updateQuality() {
         for (int i = 0; i < produits.length; i++) {
             if (!produits[i].name.equals("Aged Brie")
@@ -19,20 +35,7 @@ class GildedRose {
             } else {
                 if (produits[i].quality < 50) {
                     produits[i].quality = produits[i].quality + 1;
-
-                    if (produits[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (produits[i].sellIn < 11) {
-                            if (produits[i].quality < 50) {
-                                produits[i].quality = produits[i].quality + 1;
-                            }
-                        }
-
-                        if (produits[i].sellIn < 6) {
-                            if (produits[i].quality < 50) {
-                                produits[i].quality = produits[i].quality + 1;
-                            }
-                        }
-                    }
+                    updateQualityBackstage(produits[i]);
                 }
             }
 
