@@ -61,7 +61,7 @@ class GildedRoseTest {
  }
 
  @Test
- @DisplayName("Test that the quality (quality >= 50) of Aged Brie is unchanged while its SellIn (sellIn < 0) decrease")
+ @DisplayName("Test that the quality (quality == 50) of Aged Brie is unchanged while its SellIn (sellIn < 0) decrease")
  void testAgedBrie3(){
     Item element1 = new Item("Aged Brie", -1, 50);
     GildedRose app = new GildedRose(new Item[] {element1});
@@ -72,7 +72,7 @@ class GildedRoseTest {
  }
 
  @Test
- @DisplayName("Test that the quality (quality >= 50) of Aged Brie is unchanged while its SellIn (sellIn >= 0) decrease")
+ @DisplayName("Test that the quality (quality == 50) of Aged Brie is unchanged while its SellIn (sellIn >= 0) decrease")
  void testAgedBrie4(){
     Item element1 = new Item("Aged Brie", 3, 50);
     GildedRose app = new GildedRose(new Item[] {element1});
@@ -213,6 +213,47 @@ class GildedRoseTest {
 
     assertThat("Quality mustn't decrease",element1.quality, is(0));
     assertThat("sellIn must decrease by 1", element1.sellIn, is(-2));
+ }
+
+ @Test
+ @DisplayName("Test for sellIn= 0 --> For the Pitest")
+ void testSellIn0_PIT(){
+    Item element = new Item("Aged Brie", 1, 40);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+
+    assertThat("Quality must increase by 1",element.quality, is(41));
+    assertThat("sellIn must decrease by 1", element.sellIn, is(0));
+ }
+
+ @Test
+ @DisplayName("Test for sellIn= 11 --> For the Pitest")
+ void testSellIn11_PIT(){
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 40);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+
+    assertThat("Quality must increase by 1",element.quality, is(41));
+    assertThat("sellIn must decrease by 1", element.sellIn, is(10));
+ }
+
+ @Test
+ @DisplayName("Test for sellIn= 11 --> For the Pitest")
+ void testSellIn6_PIT(){
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 40);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+
+    assertThat("Quality must increase by 1",element.quality, is(42));
+    assertThat("sellIn must decrease by 1", element.sellIn, is(5));
+ }
+
+ @Test
+ @DisplayName("Test for the method toString()")
+ void testToString(){
+    Item element = new Item("Thamer", 5, 5);
+    
+    assertThat("Verify the method toString()",element.toString(), is("Thamer, 5, 5"));
  }
 
 }
