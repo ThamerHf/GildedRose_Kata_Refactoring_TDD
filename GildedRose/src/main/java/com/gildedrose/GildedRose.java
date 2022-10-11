@@ -36,14 +36,19 @@ class GildedRose {
                 continue;
             }
 
-            if (!produits[i].name.equals("Aged Brie")
-                    && !produits[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                decrimentQuality(produits[i]);
-               
-            } else {
+            switch(produits[i].name){
+                case "Aged Brie":
+                    incrimentQuality(produits[i]);
+                    break;
+                case "Backstage passes to a TAFKAL80ETC concert":
                     incrimentQuality(produits[i]);
                     updateQualityBackstage(produits[i]);
+                    break;
+                default:
+                    decrimentQuality(produits[i]);
+                    break;
             }
+           
 
             produits[i].sellIn = produits[i].sellIn - 1;
 
