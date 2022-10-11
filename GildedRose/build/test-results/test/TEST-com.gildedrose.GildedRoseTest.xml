@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2022-10-11T19:24:59" hostname="MSI" time="0.042">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2022-10-11T20:10:15" hostname="MSI" time="0.043">
   <properties/>
-  <testcase name="Test that the quality (quality&lt;49) of Backstage passes increase by 1 while its SellIn (5&lt;sellIn&lt;11) decrease" classname="com.gildedrose.GildedRoseTest" time="0.011"/>
+  <testcase name="Test that the quality (quality&lt;49) of Backstage passes increase by 1 while its SellIn (5&lt;sellIn&lt;11) decrease" classname="com.gildedrose.GildedRoseTest" time="0.01"/>
   <testcase name="Test that the quality (quality&lt;49) of Backstage passes increase by 2 while its SellIn (5&lt;sellIn&lt;11) decrease" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test that the quality (quality&lt;49) Backstage passes increase while its SellIn (0&lt;sellIn&lt;6) decrease" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test that the quality of Backstage passes decrease to 0 while its SellIn (sellIn&lt;0) decrease" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
@@ -15,15 +15,15 @@
   <testcase name="Test that the quality (quality == 49) of Aged Brie increase by 1 while its SellIn (sellIn &lt; 0) decrease" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test for sellIn= 11 --&gt; For the Pitest" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test for the method toString()" classname="com.gildedrose.GildedRoseTest" time="0.012"/>
-  <testcase name="Test for other product while sellIn &gt; 0 decrese, 50&gt;quality&gt;0 increase by 1" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test for the method toString()" classname="com.gildedrose.GildedRoseTest" time="0.014"/>
+  <testcase name="Test for other product while sellIn &gt; 0 decrese, 50&gt;quality&gt;0 increase by 1" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test for other product while sellIn &gt; 0 decrese, 50&gt;quality&gt;0 decrease by 2" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test for other product while sellIn &lt; 0 decrese, quality == 1 decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test for other product while sellIn decrease, quality == 0 still unchanged" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test that the quality and the sellIn for Sulfuras is unchanged for a sellIn value &gt;= 0" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test that the quality and the sellIn for Sulfuras is unchanged for a sellIn value &gt;= 0" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test that the quality and the sellIn for Sulfuras is unchanged for a sellIn value &lt; 0" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="Test for sellIn= 0 --&gt; For the Pitest" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="Test for sellIn= 11 --&gt; For the Pitest" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test for sellIn= 11 --&gt; For the Pitest" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

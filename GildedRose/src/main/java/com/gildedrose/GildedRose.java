@@ -20,13 +20,11 @@ class GildedRose {
     }
 
     public void updateQualityBackstage(Item produit){
-        if (produit.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (produit.sellIn < 11) {
-                incrimentQuality(produit);
-            }
-            if (produit.sellIn < 6) {
-                incrimentQuality(produit);
-            }
+        if (produit.sellIn < 11) {
+            incrimentQuality(produit);
+        }
+        if (produit.sellIn < 6) {
+            incrimentQuality(produit);
         }
     }
 
@@ -49,18 +47,19 @@ class GildedRose {
                     break;
             }
            
-
             produits[i].sellIn = produits[i].sellIn - 1;
 
             if (produits[i].sellIn < 0) {
-                if (!produits[i].name.equals("Aged Brie")) {
-                    if (!produits[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        decrimentQuality(produits[i]);
-                    } else {
+                switch(produits[i].name){
+                    case "Aged Brie":
+                        incrimentQuality(produits[i]);
+                        break;
+                    case "Backstage passes to a TAFKAL80ETC concert":
                         produits[i].quality = 0;
-                    }
-                } else {
-                    incrimentQuality(produits[i]);
+                        break;
+                    default:
+                        decrimentQuality(produits[i]);
+                        break;
                 }
             }
         }
