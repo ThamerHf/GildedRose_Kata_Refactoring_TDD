@@ -15,13 +15,12 @@ class GildedRose {
 
     public void updateQualityBackstage(Item produit){
         if (produit.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (produit.sellIn < 11) {
-                        updateQuality(produit);
-                }
+            if (produit.sellIn < 11) {
+                    updateQuality(produit);
+            }
 
-                if (produit.sellIn < 6) {
-                       updateQuality(produit);
-                }
+            if (produit.sellIn < 6) {
+                    updateQuality(produit);
             }
         }
     }
