@@ -7,19 +7,19 @@ class GildedRose {
         this.produits = produits;
     }
 
-    public void incrimentQuality(Item produit){
+    private void incrimentQuality(Item produit){
         if (produit.quality < 50) {
             produit.quality++;
         }
     }
 
-    public void decrimentQuality(Item produit){
+    private void decrimentQuality(Item produit){
         if (produit.quality > 0) {
             produit.quality = produit.quality - 1;
         }
     }
 
-    public void updateQualityBackstage(Item produit){
+    private void updateQualityBackstage(Item produit){
         if (produit.sellIn < 11) {
             incrimentQuality(produit);
         }
@@ -28,21 +28,21 @@ class GildedRose {
         }
     }
 
-    public void updateQualitySwitch(Item produit){
+    private void updateQualitySwitch(Item produit){
         switch(produit.name){
             case "Aged Brie":
-                incrimentQuality(produit);
+                this.incrimentQuality(produit);
                 break;
             case "Backstage passes to a TAFKAL80ETC concert":
                 if(produit.sellIn < 0){
                     produit.quality = 0;
                     break;
                 }
-                incrimentQuality(produit);
-                updateQualityBackstage(produit);
+                this.incrimentQuality(produit);
+                this.updateQualityBackstage(produit);
                 break;
             default:
-                decrimentQuality(produit);
+                this.decrimentQuality(produit);
                 break;
         }
 
@@ -54,12 +54,12 @@ class GildedRose {
                 continue;
             }
 
-            updateQualitySwitch(produits[i]);
+            this.updateQualitySwitch(produits[i]);
            
             produits[i].sellIn = produits[i].sellIn - 1;
 
             if (produits[i].sellIn < 0) {
-                updateQualitySwitch(produits[i]);
+                this.updateQualitySwitch(produits[i]);
             }
         }
     }
