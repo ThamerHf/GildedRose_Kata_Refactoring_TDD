@@ -26,12 +26,14 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < produits.length; i++) {
+            if (produits[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+                continue;
+            }
+
             if (!produits[i].name.equals("Aged Brie")
                     && !produits[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (produits[i].quality > 0) {
-                    if (!produits[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                         produits[i].quality = produits[i].quality - 1;
-                    }
                 }
             } else {
                 if (produits[i].quality < 50) {
@@ -40,17 +42,13 @@ class GildedRose {
                 }
             }
 
-            if (!produits[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                produits[i].sellIn = produits[i].sellIn - 1;
-            }
+            produits[i].sellIn = produits[i].sellIn - 1;
 
             if (produits[i].sellIn < 0) {
                 if (!produits[i].name.equals("Aged Brie")) {
                     if (!produits[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (produits[i].quality > 0) {
-                            if (!produits[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                produits[i].quality = produits[i].quality - 1;
-                            }
+                            produits[i].quality = produits[i].quality - 1;
                         }
                     } else {
                         produits[i].quality = 0;
