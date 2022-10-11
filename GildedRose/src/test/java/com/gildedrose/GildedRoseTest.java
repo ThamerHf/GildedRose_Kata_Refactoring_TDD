@@ -226,16 +226,6 @@ class GildedRoseTest {
     assertThat("sellIn must decrease by 1", element.sellIn, is(0));
  }
 
- @Test
- @DisplayName("Test for sellIn= 0 --> For the Pitest")
- void testSellIn0_PIT(){
-    Item element = new Item("Aged Brie", 1, 40);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-
-    assertThat("Quality must increase by 1",element.quality, is(41));
-    assertThat("sellIn must decrease by 1", element.sellIn, is(0));
- }
 
  @Test
  @DisplayName("Test for sellIn= 11 --> For the Pitest")
