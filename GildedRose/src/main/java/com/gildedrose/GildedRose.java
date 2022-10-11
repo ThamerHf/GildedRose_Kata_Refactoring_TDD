@@ -13,6 +13,12 @@ class GildedRose {
         }
     }
 
+    public void decrimentQuality(Item produit){
+        if (produit.quality > 0) {
+            produit.quality = produit.quality - 1;
+        }
+    }
+
     public void updateQualityBackstage(Item produit){
         if (produit.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (produit.sellIn < 11) {
@@ -32,14 +38,11 @@ class GildedRose {
 
             if (!produits[i].name.equals("Aged Brie")
                     && !produits[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (produits[i].quality > 0) {
-                        produits[i].quality = produits[i].quality - 1;
-                }
+                decrimentQuality(produits[i]);
+               
             } else {
-                if (produits[i].quality < 50) {
                     incrimentQuality(produits[i]);
                     updateQualityBackstage(produits[i]);
-                }
             }
 
             produits[i].sellIn = produits[i].sellIn - 1;
@@ -47,16 +50,12 @@ class GildedRose {
             if (produits[i].sellIn < 0) {
                 if (!produits[i].name.equals("Aged Brie")) {
                     if (!produits[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (produits[i].quality > 0) {
-                            produits[i].quality = produits[i].quality - 1;
-                        }
+                        decrimentQuality(produits[i]);
                     } else {
                         produits[i].quality = 0;
                     }
                 } else {
-                    if (produits[i].quality < 50) {
-                        incrimentQuality(produits[i]);
-                    }
+                    incrimentQuality(produits[i]);
                 }
             }
         }

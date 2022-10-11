@@ -7,60 +7,58 @@ class GildedRose {
 <span class="fc" id="L7">        this.produits = produits;</span>
 <span class="fc" id="L8">    }</span>
 
-    public void updateQualityBackstage(Item produit){
-<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (produit.name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
-<span class="fc bfc" id="L12" title="All 2 branches covered.">            if (produit.sellIn &lt; 11) {</span>
-<span class="fc bfc" id="L13" title="All 2 branches covered.">                if (produit.quality &lt; 50) {</span>
-<span class="fc" id="L14">                    produit.quality = produit.quality + 1;</span>
-                }
-            }
+    public void incrimentQuality(Item produit){
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (produit.quality &lt; 50) {</span>
+<span class="fc" id="L12">            produit.quality++;</span>
+        }
+<span class="fc" id="L14">    }</span>
 
-<span class="fc bfc" id="L18" title="All 2 branches covered.">            if (produit.sellIn &lt; 6) {</span>
-<span class="fc bfc" id="L19" title="All 2 branches covered.">                if (produit.quality &lt; 50) {</span>
-<span class="fc" id="L20">                    produit.quality = produit.quality + 1;</span>
-                }
+    public void decrimentQuality(Item produit){
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (produit.quality &gt; 0) {</span>
+<span class="fc" id="L18">            produit.quality = produit.quality - 1;</span>
+        }
+<span class="fc" id="L20">    }</span>
+
+    public void updateQualityBackstage(Item produit){
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (produit.name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (produit.sellIn &lt; 11) {</span>
+<span class="fc" id="L25">                incrimentQuality(produit);</span>
+            }
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            if (produit.sellIn &lt; 6) {</span>
+<span class="fc" id="L28">                incrimentQuality(produit);</span>
             }
         }
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L31">    }</span>
 
     public void updateQuality() {
-<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (int i = 0; i &lt; produits.length; i++) {</span>
-<span class="fc bfc" id="L28" title="All 2 branches covered.">            if (!produits[i].name.equals(&quot;Aged Brie&quot;)</span>
-<span class="fc bfc" id="L29" title="All 2 branches covered.">                    &amp;&amp; !produits[i].name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
-<span class="fc bfc" id="L30" title="All 2 branches covered.">                if (produits[i].quality &gt; 0) {</span>
-<span class="fc bfc" id="L31" title="All 2 branches covered.">                    if (!produits[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
-<span class="fc" id="L32">                        produits[i].quality = produits[i].quality - 1;</span>
-                    }
-                }
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (int i = 0; i &lt; produits.length; i++) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (produits[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
+<span class="fc" id="L36">                continue;</span>
+            }
+
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            if (!produits[i].name.equals(&quot;Aged Brie&quot;)</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">                    &amp;&amp; !produits[i].name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
+<span class="fc" id="L41">                decrimentQuality(produits[i]);</span>
+               
             } else {
-<span class="fc bfc" id="L36" title="All 2 branches covered.">                if (produits[i].quality &lt; 50) {</span>
-<span class="fc" id="L37">                    produits[i].quality = produits[i].quality + 1;</span>
-<span class="fc" id="L38">                    updateQualityBackstage(produits[i]);</span>
-                }
+<span class="fc" id="L44">                    incrimentQuality(produits[i]);</span>
+<span class="fc" id="L45">                    updateQualityBackstage(produits[i]);</span>
             }
 
-<span class="fc bfc" id="L42" title="All 2 branches covered.">            if (!produits[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
-<span class="fc" id="L43">                produits[i].sellIn = produits[i].sellIn - 1;</span>
-            }
+<span class="fc" id="L48">            produits[i].sellIn = produits[i].sellIn - 1;</span>
 
-<span class="fc bfc" id="L46" title="All 2 branches covered.">            if (produits[i].sellIn &lt; 0) {</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">                if (!produits[i].name.equals(&quot;Aged Brie&quot;)) {</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">                    if (!produits[i].name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
-<span class="fc bfc" id="L49" title="All 2 branches covered.">                        if (produits[i].quality &gt; 0) {</span>
-<span class="fc bfc" id="L50" title="All 2 branches covered.">                            if (!produits[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
-<span class="fc" id="L51">                                produits[i].quality = produits[i].quality - 1;</span>
-                            }
-                        }
+<span class="fc bfc" id="L50" title="All 2 branches covered.">            if (produits[i].sellIn &lt; 0) {</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">                if (!produits[i].name.equals(&quot;Aged Brie&quot;)) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">                    if (!produits[i].name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
+<span class="fc" id="L53">                        decrimentQuality(produits[i]);</span>
                     } else {
-<span class="fc" id="L55">                        produits[i].quality = produits[i].quality - produits[i].quality;</span>
+<span class="fc" id="L55">                        produits[i].quality = 0;</span>
                     }
                 } else {
-<span class="fc bfc" id="L58" title="All 2 branches covered.">                    if (produits[i].quality &lt; 50) {</span>
-<span class="fc" id="L59">                        produits[i].quality = produits[i].quality + 1;</span>
-                    }
+<span class="fc" id="L58">                    incrimentQuality(produits[i]);</span>
                 }
             }
         }
-<span class="fc" id="L64">    }</span>
+<span class="fc" id="L62">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
