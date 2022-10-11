@@ -256,4 +256,49 @@ class GildedRoseTest {
     assertThat("Verify the method toString()",element.toString(), is("Thamer, 5, 5"));
  }
 
+ 
+ @Test
+ @DisplayName("Test that the quality (quality >= 2) of conjured product decrease by 2 while its sellIn > 0")
+ void testConjured1(){
+   Item element = new Item("Conjured", 6, 40);
+   GildedRose app = new GildedRose(new Item[] {element});
+   app.updateQuality();
+
+   assertThat("Quality must decrease by 2",element.quality, is(38));
+   assertThat("sellIn must decrease by 1", element.sellIn, is(5));
+ }
+
+ @Test
+ @DisplayName("Test that the quality (quality == 1) of conjured product decrease by 1 while its sellIn > 0")
+ void testConjured2(){
+   Item element = new Item("Conjured", 6, 1);
+   GildedRose app = new GildedRose(new Item[] {element});
+   app.updateQuality();
+
+   assertThat("Quality must decrease by 1",element.quality, is(0));
+   assertThat("sellIn must decrease by 1", element.sellIn, is(5));
+ }
+
+ @Test
+ @DisplayName("Test that the quality (quality >= 4) of conjured product decrease by 4 while its sellIn < 0 decrease")
+ void testConjured3(){
+   Item element = new Item("Conjured", -1, 4);
+   GildedRose app = new GildedRose(new Item[] {element});
+   app.updateQuality();
+
+   assertThat("Quality must decrease by 4",element.quality, is(0));
+   assertThat("sellIn must decrease by 1", element.sellIn, is(-2));
+ }
+
+ @Test
+ @DisplayName("Test that the quality (quality == 3) of conjured product decrease by 3 while its sellIn < 0 decrease")
+ void testConjured4(){
+   Item element = new Item("Conjured", -1, 3);
+   GildedRose app = new GildedRose(new Item[] {element});
+   app.updateQuality();
+
+   assertThat("Quality must decrease by 3",element.quality, is(0));
+   assertThat("sellIn must decrease by 1", element.sellIn, is(-2));
+ }
+
 }

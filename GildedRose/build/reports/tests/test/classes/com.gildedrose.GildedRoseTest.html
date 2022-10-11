@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">23</div>
+<div class="counter">27</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.028s</div>
+<div class="counter">0.032s</div>
 <p>duration</p>
 </div>
 </td>
@@ -90,43 +90,43 @@
 <tr>
 <td class="success">Test that the quality (quality == 50) of Aged Brie is unchanged while its SellIn (sellIn &lt; 0) decrease</td>
 <td class="success">testAgedBrie3()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that the quality (quality == 50) of Aged Brie is unchanged while its SellIn (sellIn &gt;= 0) decrease</td>
 <td class="success">testAgedBrie4()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that the quality (quality == 49) of Aged Brie increase by 1 while its SellIn (sellIn &lt; 0) decrease</td>
 <td class="success">testAgedBrie5()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that the quality (quality&lt;49) of Backstage passes increase by 1 while its SellIn (5&lt;sellIn&lt;11) decrease</td>
 <td class="success">testBackstagePasses1()</td>
-<td class="success">0.010s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that the quality (quality&lt;49) of Backstage passes increase by 2 while its SellIn (5&lt;sellIn&lt;11) decrease</td>
 <td class="success">testBackstagePasses2()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that the quality (quality&lt;49) Backstage passes increase while its SellIn (0&lt;sellIn&lt;6) decrease</td>
 <td class="success">testBackstagePasses3()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that the quality of Backstage passes decrease to 0 while its SellIn (sellIn&lt;0) decrease</td>
 <td class="success">testBackstagePasses4()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -138,13 +138,37 @@
 <tr>
 <td class="success">Test that the quality (quality == 49) of Backstage passes increase while it's SellIn (0&lt;sellIn&lt;6) decrease</td>
 <td class="success">testBackstagePasses6()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test that the quality (quality &gt;= 50) of Backstage passes is unchanged while it's SellIn decrease</td>
 <td class="success">testBackstagePasses7()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test that the quality (quality &gt;= 2) of conjured product decrease by 2 while its sellIn &gt; 0</td>
+<td class="success">testConjured1()</td>
 <td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test that the quality (quality == 1) of conjured product decrease by 1 while its sellIn &gt; 0</td>
+<td class="success">testConjured2()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test that the quality (quality &gt;= 4) of conjured product decrease by 4 while its sellIn &lt; 0 decrease</td>
+<td class="success">testConjured3()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test that the quality (quality == 3) of conjured product decrease by 3 while its sellIn &lt; 0 decrease</td>
+<td class="success">testConjured4()</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -156,19 +180,19 @@
 <tr>
 <td class="success">Test for other product while sellIn &gt; 0 decrese, 50&gt;quality&gt;0 increase by 1</td>
 <td class="success">testOtherProduct1()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test for other product while sellIn &gt; 0 decrese, 50&gt;quality&gt;0 decrease by 2</td>
 <td class="success">testOtherProduct2()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Test for other product while sellIn &lt; 0 decrese, quality == 1 decrease by 1</td>
 <td class="success">testOtherProduct3()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -180,7 +204,7 @@
 <tr>
 <td class="success">Test for sellIn= 0 --&gt; For the Pitest</td>
 <td class="success">testSellIn0_PIT()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -210,7 +234,7 @@
 <tr>
 <td class="success">Test for the method toString()</td>
 <td class="success">testToString()</td>
-<td class="success">0.011s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -223,7 +247,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.2</a> at Oct 11, 2022, 10:27:44 PM</p>
+<a href="http://www.gradle.org">Gradle 7.2</a> at Oct 11, 2022, 11:20:47 PM</p>
 </div>
 </div>
 </body>

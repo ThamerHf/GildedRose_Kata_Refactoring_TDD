@@ -41,6 +41,10 @@ class GildedRose {
                 this.incrimentQuality(produit);
                 this.updateQualityBackstage(produit);
                 break;
+            case "Conjured":
+                this.decrimentQuality(produit);
+                this.decrimentQuality(produit);
+                break;
             default:
                 this.decrimentQuality(produit);
                 break;
