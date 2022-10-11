@@ -7,20 +7,19 @@ class GildedRose {
         this.produits = produits;
     }
 
-    public void updateQuality(produit){
+    public void incrimentQuality(Item produit){
         if (produit.quality < 50) {
-            produit.quality = produit.quality++;
+            produit.quality++;
         }
     }
 
     public void updateQualityBackstage(Item produit){
         if (produit.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (produit.sellIn < 11) {
-                    updateQuality(produit);
+                incrimentQuality(produit);
             }
-
             if (produit.sellIn < 6) {
-                    updateQuality(produit);
+                incrimentQuality(produit);
             }
         }
     }
@@ -36,7 +35,7 @@ class GildedRose {
                 }
             } else {
                 if (produits[i].quality < 50) {
-                    updateQuality(produits[i]);
+                    incrimentQuality(produits[i]);
                     updateQualityBackstage(produits[i]);
                 }
             }
@@ -58,7 +57,7 @@ class GildedRose {
                     }
                 } else {
                     if (produits[i].quality < 50) {
-                        updateQuality(produits[i]);
+                        incrimentQuality(produits[i]);
                     }
                 }
             }
