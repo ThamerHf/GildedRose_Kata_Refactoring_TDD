@@ -6,6 +6,12 @@ import static org.hamcrest.Matchers.*;
 
 class GildedRoseTest {
 
+/************************************************************************/
+/************************************************************************/
+/***************** TESTS pour le produit Sulfuras ***********************/
+/************************************************************************/
+/************************************************************************/
+
   @Test
   @DisplayName("Test that the name is unchanged")
   void testName() {
@@ -37,6 +43,11 @@ class GildedRoseTest {
    assertThat("sellIn is unchanged", element1.sellIn, is(-1));
 }
 
+/************************************************************************/
+/************************************************************************/
+/***************** TESTS pour le produit Aged Brie **********************/
+/************************************************************************/
+/************************************************************************/
 
  @Test
  @DisplayName("Test that the quality (quality < 50) of Aged Brie increase by 1 while its SellIn (sellIn >= 0) decrease")
@@ -93,6 +104,12 @@ class GildedRoseTest {
     assertThat("sellIn must decrease", element1.sellIn, is(-2));
  }
 
+/************************************************************************/
+/************************************************************************/
+/***************** TESTS pour le produit Backstage **********************/
+/************************************************************************/
+/************************************************************************/
+
  @Test
  @DisplayName("Test that the quality (quality<49) of Backstage passes increase by 1 while its SellIn (5<sellIn<11) decrease")
  void testBackstagePasses1(){
@@ -116,7 +133,7 @@ class GildedRoseTest {
  }
 
  @Test
- @DisplayName("Test that the quality (quality<49) Backstage passes increase while its SellIn (0<sellIn<6) decrease")
+ @DisplayName("Test that the quality (quality<49) Backstage passes increase by 3 while its SellIn (0<sellIn<6) decrease")
  void testBackstagePasses3(){
     Item element1 = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10);
     GildedRose app = new GildedRose(new Item[] {element1});
@@ -170,6 +187,11 @@ class GildedRoseTest {
     assertThat("sellIn must decrease by 1",element1.sellIn, is(3));
  }
 
+/************************************************************************/
+/************************************************************************/
+/***************** TESTS pour les autres produits ***********************/
+/************************************************************************/
+/************************************************************************/
 
  @Test
  @DisplayName("Test for other product while sellIn > 0 decrese, 50>quality>0 increase by 1")
@@ -215,16 +237,11 @@ class GildedRoseTest {
     assertThat("sellIn must decrease by 1", element1.sellIn, is(-2));
  }
 
- @Test
- @DisplayName("Test for sellIn= 0 --> For the Pitest")
- void testSellIn0_PIT(){
-    Item element = new Item("Aged Brie", 1, 40);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-
-    assertThat("Quality must increase by 1",element.quality, is(41));
-    assertThat("sellIn must decrease by 1", element.sellIn, is(0));
- }
+ /************************************************************************/
+/************************************************************************/
+/***************** TESTS pour les cas aux bornes  ***********************/
+/************************************************************************/
+/************************************************************************/
 
  @Test
  @DisplayName("Test for sellIn= 0 --> For the Pitest")
@@ -259,6 +276,12 @@ class GildedRoseTest {
     assertThat("sellIn must decrease by 1", element.sellIn, is(5));
  }
 
+ /************************************************************************/
+/************************************************************************/
+/***************** TESTS pour la toSting du classe Item *****************/
+/************************************************************************/
+/************************************************************************/
+
  @Test
  @DisplayName("Test for the method toString()")
  void testToString(){
@@ -267,6 +290,11 @@ class GildedRoseTest {
     assertThat("Verify the method toString()",element.toString(), is("Thamer, 5, 5"));
  }
 
+ /************************************************************************/
+/************************************************************************/
+/***************** TESTS pour le produit Conjured ***********************/
+/************************************************************************/
+/************************************************************************/
  
  @Test
  @DisplayName("Test that the quality (quality >= 2) of conjured product decrease by 2 while its sellIn > 0")
