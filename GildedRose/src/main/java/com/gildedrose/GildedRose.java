@@ -23,12 +23,29 @@ class GildedRose {
         }
     }
 
+/************************************************************************/
+/* decrementQuality: decrementer la qualité d'un produit passé en       */
+/*                  en testant que la qualité est supérieur à 0         */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
+
     private void decrimentQuality(Item produit){
         if (produit.quality > 0) {
             produit.quality = produit.quality - 1;
         }
     }
 
+/************************************************************************/
+/* updateQualityBackstage: mettre à jour la qualité du backstage dans   */
+/*                      les deux cas particulières sellIn < 11 et < 6   */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
     private void updateQualityBackstage(Item produit){
         if (produit.sellIn < 11) {
             incrimentQuality(produit);
