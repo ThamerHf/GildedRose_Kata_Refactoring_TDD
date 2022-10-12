@@ -29,6 +29,14 @@ class GildedRose {
         }
     }
 
+/************************************************************************/
+/* updateQuality: incrementer la qualité d'un produit passé en       */
+/*                  en testant que la qualité est inférieur à 50        */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
     private void updateQualityBackstage(Item produit){
         if (produit.sellIn < 11) {
             incrimentQuality(produit);
@@ -38,6 +46,17 @@ class GildedRose {
         }
     }
 
+/************************************************************************/
+/* updateQualitySwitch: incrementer ou decrémenter la qualité d'un      */
+/*                      produit passé en  paramétre, la modification    */
+/*                      de la qualité se fait en fonction du nom de     */
+/*                      produit                                         */
+/*                                                                      */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
     private void updateQualitySwitch(Item produit){
         switch(produit.name){
             case "Aged Brie":
@@ -61,6 +80,15 @@ class GildedRose {
         }
     }
 
+/************************************************************************/
+/* updateQuality: itérer sur l'ensemble de produit, mettre à jour la    */
+/*                qualité de tous les produits                          */
+/*                                                                      */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
     public void updateQuality() {
         for (int i = 0; i < produits.length; i++) {
             if (produits[i].name.equals("Sulfuras, Hand of Ragnaros")) {
