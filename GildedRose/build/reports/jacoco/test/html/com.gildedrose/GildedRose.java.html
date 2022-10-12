@@ -7,65 +7,112 @@ class GildedRose {
 <span class="fc" id="L7">        this.produits = produits;</span>
 <span class="fc" id="L8">    }</span>
 
+
+/************************************************************************/
+/* incrementQuality: incrementer la qualité d'un produit passé en       */
+/*                  en testant que la qualité est inférieur à 50        */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
+
     private void incrimentQuality(Item produit){
-<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (produit.quality &lt; 50) {</span>
-<span class="fc" id="L12">            produit.quality++;</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (produit.quality &lt; 50) {</span>
+<span class="fc" id="L22">            produit.quality++;</span>
         }
-<span class="fc" id="L14">    }</span>
+<span class="fc" id="L24">    }</span>
+
+/************************************************************************/
+/* decrementQuality: decrementer la qualité d'un produit passé en       */
+/*                  en testant que la qualité est supérieur à 0         */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
 
     private void decrimentQuality(Item produit){
-<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (produit.quality &gt; 0) {</span>
-<span class="fc" id="L18">            produit.quality = produit.quality - 1;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (produit.quality &gt; 0) {</span>
+<span class="fc" id="L37">            produit.quality = produit.quality - 1;</span>
         }
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L39">    }</span>
 
+/************************************************************************/
+/* updateQuality: incrementer la qualité d'un produit passé en          */
+/*                en testant que la qualité est inférieur à 50          */
+/*                                                                      */
+/* updateQualityBackstage: mettre à jour la qualité du backstage dans   */
+/*                      les deux cas particulières sellIn &lt; 11 et &lt; 6   */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
     private void updateQualityBackstage(Item produit){
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (produit.sellIn &lt; 11) {</span>
-<span class="fc" id="L24">            incrimentQuality(produit);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (produit.sellIn &lt; 11) {</span>
+<span class="fc" id="L54">            incrimentQuality(produit);</span>
         }
-<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (produit.sellIn &lt; 6) {</span>
-<span class="fc" id="L27">            incrimentQuality(produit);</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (produit.sellIn &lt; 6) {</span>
+<span class="fc" id="L57">            incrimentQuality(produit);</span>
         }
-<span class="fc" id="L29">    }</span>
+<span class="fc" id="L59">    }</span>
 
+/************************************************************************/
+/* updateQualitySwitch: incrementer ou decrémenter la qualité d'un      */
+/*                      produit passé en  paramétre, la modification    */
+/*                      de la qualité se fait en fonction du nom de     */
+/*                      produit                                         */
+/*                                                                      */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
     private void updateQualitySwitch(Item produit){
-<span class="fc bfc" id="L32" title="All 4 branches covered.">        switch(produit.name){</span>
+<span class="fc bfc" id="L73" title="All 4 branches covered.">        switch(produit.name){</span>
             case &quot;Aged Brie&quot;:
-<span class="fc" id="L34">                this.incrimentQuality(produit);</span>
-<span class="fc" id="L35">                break;</span>
+<span class="fc" id="L75">                this.incrimentQuality(produit);</span>
+<span class="fc" id="L76">                break;</span>
             case &quot;Backstage passes to a TAFKAL80ETC concert&quot;:
-<span class="fc bfc" id="L37" title="All 2 branches covered.">                if(produit.sellIn &lt; 0){</span>
-<span class="fc" id="L38">                    produit.quality = 0;</span>
-<span class="fc" id="L39">                    break;</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">                if(produit.sellIn &lt; 0){</span>
+<span class="fc" id="L79">                    produit.quality = 0;</span>
+<span class="fc" id="L80">                    break;</span>
                 }
-<span class="fc" id="L41">                this.incrimentQuality(produit);</span>
-<span class="fc" id="L42">                this.updateQualityBackstage(produit);</span>
-<span class="fc" id="L43">                break;</span>
+<span class="fc" id="L82">                this.incrimentQuality(produit);</span>
+<span class="fc" id="L83">                this.updateQualityBackstage(produit);</span>
+<span class="fc" id="L84">                break;</span>
             case &quot;Conjured&quot;:
-<span class="fc" id="L45">                this.decrimentQuality(produit);</span>
-<span class="fc" id="L46">                this.decrimentQuality(produit);</span>
-<span class="fc" id="L47">                break;</span>
+<span class="fc" id="L86">                this.decrimentQuality(produit);</span>
+<span class="fc" id="L87">                this.decrimentQuality(produit);</span>
+<span class="fc" id="L88">                break;</span>
             default:
-<span class="fc" id="L49">                this.decrimentQuality(produit);</span>
+<span class="fc" id="L90">                this.decrimentQuality(produit);</span>
                 break;
         }
+<span class="fc" id="L93">    }</span>
 
-<span class="fc" id="L53">    }</span>
-
+/************************************************************************/
+/* updateQuality: itérer sur l'ensemble de produit, mettre à jour la    */
+/*                qualité de tous les produits                          */
+/*                                                                      */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
     public void updateQuality() {
-<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (int i = 0; i &lt; produits.length; i++) {</span>
-<span class="fc bfc" id="L57" title="All 2 branches covered.">            if (produits[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
-<span class="fc" id="L58">                continue;</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">        for (int i = 0; i &lt; produits.length; i++) {</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">            if (produits[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
+<span class="fc" id="L107">                continue;</span>
             }
+<span class="fc" id="L109">            this.updateQualitySwitch(produits[i]);</span>
+<span class="fc" id="L110">            produits[i].sellIn = produits[i].sellIn - 1;</span>
 
-<span class="fc" id="L61">            this.updateQualitySwitch(produits[i]);</span>
-           
-<span class="fc" id="L63">            produits[i].sellIn = produits[i].sellIn - 1;</span>
-
-<span class="fc bfc" id="L65" title="All 2 branches covered.">            if (produits[i].sellIn &lt; 0) {</span>
-<span class="fc" id="L66">                this.updateQualitySwitch(produits[i]);</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">            if (produits[i].sellIn &lt; 0) {</span>
+<span class="fc" id="L113">                this.updateQualitySwitch(produits[i]);</span>
             }
         }
-<span class="fc" id="L69">    }</span>
+<span class="fc" id="L116">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

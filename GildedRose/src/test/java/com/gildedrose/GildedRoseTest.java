@@ -246,12 +246,12 @@ class GildedRoseTest {
  @Test
  @DisplayName("Test for sellIn= 0 --> For the Pitest")
  void testSellIn1_PIT(){
-    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 40);
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 1, 40);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
 
-    assertThat("Quality must increase by 1",element.quality, is(0));
-    assertThat("sellIn must decrease by 1", element.sellIn, is(-1));
+    assertThat("Quality must increase by 1",element.quality, is(43));
+    assertThat("sellIn must decrease by 1", element.sellIn, is(0));
  }
 
  @Test
