@@ -7,6 +7,16 @@ class GildedRose {
         this.produits = produits;
     }
 
+
+/************************************************************************/
+/* incrementQuality: incrementer la qualité d'un produit passé en       */
+/*                  en testant que la qualité est inférieur à 50        */
+/*                                                                      */
+/* Entrée: produit de type Item                                         */
+/*                                                                      */
+/* Sortie: void                                                         */
+/************************************************************************/
+
     private void incrimentQuality(Item produit){
         if (produit.quality < 50) {
             produit.quality++;
@@ -49,7 +59,6 @@ class GildedRose {
                 this.decrimentQuality(produit);
                 break;
         }
-
     }
 
     public void updateQuality() {
@@ -57,9 +66,7 @@ class GildedRose {
             if (produits[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                 continue;
             }
-
             this.updateQualitySwitch(produits[i]);
-           
             produits[i].sellIn = produits[i].sellIn - 1;
 
             if (produits[i].sellIn < 0) {
